@@ -83,7 +83,7 @@ const gamingProducts = [
 
 const otherProducts = [
   {
-    id: 1,
+    id: 0,
     type: "other",
     name: "HP Spectre x360 15",
     rating: 4.5,
@@ -91,7 +91,7 @@ const otherProducts = [
     imageSrc: "images/HP Spectre x360 15.png",
   },
   {
-    id: 2,
+    id: 1,
     type: "other",
     name: "HP Spectre x360 15",
     rating: 4,
@@ -99,7 +99,7 @@ const otherProducts = [
     imageSrc: "images/laptop 3.png",
   },
   {
-    id: 3,
+    id: 2,
     type: "other",
     name: "Apple Ipad 15",
     rating: 4.6,
@@ -107,7 +107,7 @@ const otherProducts = [
     imageSrc: "images/ipad.png",
   },
   {
-    id: 4,
+    id: 3,
     type: "other",
     name: "Apple iPhone 12 Pro",
     rating: 4.7,
@@ -115,15 +115,15 @@ const otherProducts = [
     imageSrc: "images/Apple-iPhone-12-Pro.png",
   },
   {
-    id: 5,
+    id: 4,
     type: "other",
-    name: "g233 prodigy gaming headset",
+    name: "G233 Prodigy Gaming Headset",
     rating: 4.5,
     price: "$450.99",
     imageSrc: "images/g233 prodigy gaming headset.png",
   },
   {
-    id: 6,
+    id: 5,
     type: "other",
     name: "ROG Strixm Wireless gaming",
     rating: 4.4,
@@ -131,7 +131,7 @@ const otherProducts = [
     imageSrc: "images/ROG StrixmWireless gaming headset.png",
   },
   {
-    id: 7,
+    id: 6,
     type: "other",
     name: "Nike Running Shoese",
     rating: 4.5,
@@ -139,7 +139,7 @@ const otherProducts = [
     imageSrc: "images/Nike Running Shoese.png",
   },
   {
-    id: 8,
+    id: 7,
     type: "other",
     name: "Running Shoes",
     rating: 4.4,

@@ -16,8 +16,11 @@
 }
 
 body {
+  min-height: 100vh;
+  position: relative;
   background-color: var(--bg);
   overflow-x: hidden;
+  padding-bottom: 100px;
 }
 
 #navbar {
@@ -250,7 +253,7 @@ body {
 
 .card-img,
 .card-title {
-  transform: translateY(4rem);
+  transform: translateY(2.5rem);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -265,19 +268,16 @@ body {
   transition-delay: 0.1s;
 }
 
-.card-body,
-.card-footer {
+.card-body {
   transform: translateY(8rem);
   transition: transform 0.2s ease-in-out;
 }
 
 .card-body {
   width: 100%;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   transition-delay: 0.2s;
 }
 
@@ -373,8 +373,9 @@ body {
   cursor: pointer;
   aspect-ratio: 1;
   user-select: none;
-  background-color: #fff;
+  background-color: #242424;
   border-radius: 50%;
+  border: 1px solid #00be49;
   font: 800 1.5rem sans-serif;
   line-height: 3rem;
   text-align: center;
@@ -382,10 +383,10 @@ body {
 }
 
 .arrow:hover {
-  background-color: #ffd5d5;
+  background-color: #2e2e2e;
 }
 .arrow:active {
-  background-color: #ffbcbc;
+  background-color: #202020;
 }
 
 .arrow.right {
@@ -455,6 +456,10 @@ footer {
   text-align: center;
   padding: 50px;
   color: #ffbcbc;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 #paymentDiv {
@@ -513,4 +518,63 @@ footer {
   background-color: #0e1b30ec;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+/* Cart page */
+.cartItem,
+.paymentDetails {
+  margin: 18px auto;
+  padding: 18px;
+  width: 100%;
+  min-height: 130px;
+  background-color: #0e1b30ec;
+  border: 1px solid #00be49;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.paymentDetails {
+  width: 30%;
+  margin-top: 36px;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cartItem:nth-child(1) {
+  margin-top: 36px;
+}
+
+.cartItem div {
+  display: flex;
+  align-items: center;
+}
+
+.cartItem div .cartImgDiv {
+  width: 90px;
+  aspect-ratio: 1;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.cartItem div .cartImgDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cart_container {
+  width: 60%;
+}
+
+#closebtn {
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 50px;
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head") %>
+  <body>
+    <%- include("partials/payment") %> <%- include("partials/header") %>
+    <!-- Start Landing Page -->
+    <div class="banner" id="home">
+      <div class="content">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+          "
+        >
+          <div class="cart_container">
+            <% list.forEach((item) => { %>
+            <div class="cartItem">
+              <div>
+                <div class="cartImgDiv">
+                  <img src="<%= item.imageSrc %>" alt="<%= item.name %>" />
+                </div>
+                <h2><%= item.name %></h2>
+              </div>
+              <div>
+                <h1 class="cartItemPrice" style="margin-right: 20px">
+                  <%= item.price %>
+                </h1>
+                <h1>
+                  <i
+                    class="fas fa-times cartItemDelete"
+                    style="color: rgb(255, 145, 145); cursor: pointer"
+                    data-id="<%= item.type.charAt(0) + '_' + item.id %>"
+                  ></i>
+                </h1>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+          <div class="paymentDetails">
+            <h1 id="total"></h1>
+            <button
+              class="btn btn-success placeOrderBtn"
+              style="border: 1px solid #88882d"
+            >
+              Place Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <p>Copyright &copy; 2023 Game Store</p>
+      </div>
+    </footer>
+
+    <script src="cart.js"></script>
+  </body>
+</html>

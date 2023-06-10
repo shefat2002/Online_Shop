@@ -7,22 +7,33 @@ const cards2 = document.querySelectorAll(".slider2 .cards .card");
 const cardDiv2 = document.querySelector(".slider2 .cards");
 const left_arrow2 = document.querySelector(".slider2 .arrow.left");
 const right_arrow2 = document.querySelector(".slider2 .arrow.right");
-
-const cartIcon = document.querySelector(".item-number");
 const addCartButtons = document.querySelectorAll(".btn-border");
 const navbar = document.getElementById("navbar");
+
+const cartIcon = document.querySelector(".item-number");
+const cartLink = document.querySelector(".cart-icon");
 
 let cart = localStorage.getItem("items")
   ? localStorage.getItem("items").split("u")
   : [];
 
-addCartButtons.forEach((btn, index) => {
-  btn.dataset.id = index;
+cartIcon.innerText = cart.length;
+cartLink.href = "/cart?list=" + localStorage.getItem("items");
+
+addCartButtons.forEach((btn) => {
+  const id = btn.dataset.id;
+  btn.innerText = cart.includes(id.toString()) ? "Added" : "Add to Cart";
   btn.onclick = () => {
-    btn.innerText = "Added";
-    if (!cart.includes(btn.dataset.id.toString())) cart.push(btn.dataset.id);
+    if (!cart.includes(id.toString())) {
+      cart.push(id);
+      btn.innerText = "Added";
+    } else {
+      cart = cart.filter((item) => item !== id);
+      btn.innerText = "Add to Cart";
+    }
     localStorage.setItem("items", cart.join("u"));
     cartIcon.innerText = cart.length;
+    cartLink.href = "/cart?list=" + localStorage.getItem("items");
   };
 });
 
@@ -82,11 +93,11 @@ const movecards = (div, left) => {
   div.style.left = `calc(${-left}rem - ${(left / 20) * 2}px)`;
 };
 
-let prevScrollpos = window.pageYOffset;
+let prevScrollpos = window.scrollY;
 
 window.onscroll = () => {
-  var currentScrollPos = window.pageYOffset;
-  if (window.pageYOffset === 0) navbar.style.padding = "30px 0";
+  var currentScrollPos = window.scrollY;
+  if (window.scrollY === 0) navbar.style.padding = "30px 0";
   else navbar.style.padding = "15px 0";
 
   if (prevScrollpos > currentScrollPos) {
@@ -119,6 +130,7 @@ const placeOrderBtn = document.querySelectorAll(".placeOrderBtn");
 const paymentDiv = document.getElementById("paymentDiv");
 const paymentForm = document.getElementById("paymentForm");
 const orderStatus = document.getElementById("orderStatus");
+const closeBtn = document.getElementById("closebtn");
 
 placeOrderBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -127,6 +139,10 @@ placeOrderBtn.forEach((btn) => {
     paymentDiv.style.alignItems = "center";
   });
 });
+
+closeBtn.onclick = () => {
+  paymentDiv.style.display = "none";
+};
 
 paymentForm.addEventListener("submit", (event) => {
   event.preventDefault();
