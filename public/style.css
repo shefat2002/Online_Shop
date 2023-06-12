@@ -36,7 +36,7 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: 30px 0;
-  background-color: #0e152399;
+  background-color: #0e1523f0;
 }
 
 .header .title {
@@ -49,19 +49,16 @@ body {
 }
 
 .header .title h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   font-family: "Righteous", cursive;
-}
-
-.header .title img {
-  width: 100px;
 }
 
 .header a {
   text-decoration: none;
   color: var(--secondary2);
   font-size: 1.5rem;
+  padding: 20px;
   margin-right: 20px;
 }
 
@@ -241,6 +238,7 @@ body {
 .card-content {
   position: absolute;
   top: 0;
+  text-decoration: none;
   left: 0;
   width: 100%;
   height: 100%;
@@ -253,8 +251,15 @@ body {
 
 .card-img,
 .card-title {
-  transform: translateY(2.5rem);
   transition: transform 0.2s ease-in-out;
+}
+
+.card-img {
+  transform: translateY(1.2rem);
+}
+
+.card-title {
+  transform: translateY(1rem);
 }
 
 .card-img {
@@ -269,7 +274,7 @@ body {
 }
 
 .card-body {
-  transform: translateY(8rem);
+  transform: translateY(5rem);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -281,15 +286,31 @@ body {
   transition-delay: 0.2s;
 }
 
-.card:hover .card-img,
-.card:hover .card-title,
-.card:hover .card-body,
-.card:hover .card-footer {
-  transform: translateY(0);
+.card:hover .card-img {
+  transform: translateY(-25px);
+}
+
+.card:hover .card-title {
+  transform: translateY(-45px);
+}
+
+.card:hover .card-body {
+  transform: translateY(-45px);
 }
 
 .card-body {
   transition-delay: 0.1s;
+}
+
+.card-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 1rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .star {
@@ -477,6 +498,21 @@ footer {
 }
 
 #paymentForm {
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#paymentForm div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+#paymentForm div .formDiv {
   width: 500px;
   display: flex;
   align-items: center;
@@ -486,25 +522,36 @@ footer {
 
 #paymentForm label {
   display: block;
-  margin-bottom: 10px;
 }
 
 #paymentForm input[type="text"] {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
-  color: #18253c;
+  color: #b9b9b9;
+  background-color: #18253c;
   border-radius: 4px;
   margin-bottom: 10px;
 }
 
 #paymentForm button[type="submit"] {
-  background-color: #007bff;
+  bottom: 0;
+  background-color: #18253c;
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
+  font-size: 18px;
+  border: 1px solid #4d77c0;
+  padding: 20px 40px;
+  border-radius: 50px;
+  margin-top: 30px;
   cursor: pointer;
+}
+
+#paymentForm button[type="submit"]hover {
+  background-color: #304d80;
+}
+
+#paymentForm button[type="submit"]:active {
+  background-color: #0f1829;
 }
 
 #orderStatus {

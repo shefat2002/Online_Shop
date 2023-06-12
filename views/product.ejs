@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head") %>
+
+  <body>
+    <%- include("partials/payment") %> <%- include("partials/header") %>
+    <div class="banner" id="home">
+      <div class="content">
+        <div class="container">
+          <div class="image">
+            <img src="<%= product.imageSrc %>" alt="Gaming Products Banner" />
+          </div>
+          <div class="info">
+            <h1 style="font-size: 40px; margin: 20px 0px">
+              <%= product.name %>
+            </h1>
+            <% details.features.forEach(feat => { %>
+            <p style="font-size: 20px; margin-bottom: 10px">
+              <i class="far fa-hand-point-right"></i> <%= feat %>
+            </p>
+
+            <% }) %>
+            <h2 style="font-size: 30px; margin: 10px 0px">
+              Price: <%= product.price %>
+            </h2>
+            <div
+              class="card-footer"
+              style="
+                position: relative;
+                bottom: auto;
+                display: block;
+                margin-top: 20px;
+              "
+            >
+              <button
+                class="btn btn-success placeOrderBtn"
+                style="border: 1px solid #88882d; margin-right: 10px"
+              >
+                Buy Now
+              </button>
+              <button
+                class="btn btn-border"
+                data-id="<%= product.type.charAt(0) + '_' + product.id %>"
+              ></button>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 50px">
+          <h1 style="font-size: 35px">Description:</h1>
+          <p style="font-size: 22px; line-height: 1.5"><%= details.des %></p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <p>Copyright &copy; 2023 Game Store</p>
+      </div>
+    </footer>
+
+    <script src="header.js"></script>
+    <script src="payment.js"></script>
+    <script src="product.js"></script>
+  </body>
+</html>

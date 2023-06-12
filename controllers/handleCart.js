@@ -1,4 +1,4 @@
-import { gamingProducts, otherProducts } from "../data.js";
+import { products } from "../data/products.js";
 
 const createCartList = (ids) => {
   let gplist = [],
@@ -8,8 +8,8 @@ const createCartList = (ids) => {
     let data = item.split("_");
     let id = parseInt(data[1]);
     data[0] === "g"
-      ? gplist.push(gamingProducts[id])
-      : oplist.push(otherProducts[id]);
+      ? gplist.push(products.gamingProducts[id])
+      : oplist.push(products.otherProducts[id]);
   });
 
   const list = gplist.concat(oplist);
